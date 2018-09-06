@@ -6,6 +6,8 @@ android {
         applicationId "com.example.noshin.cyride"
         minSdkVersion 15
         targetSdkVersion 27
+
+        // commited by riaj
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

@@ -48,7 +48,8 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".StopwatchActivity" />
-        <activity android:name=".RideSummary"></activity>
+        <activity android:name=".RideSummary" />
+        <activity android:name=".Rating"></activity>
     </application>
 
 </manifest>
