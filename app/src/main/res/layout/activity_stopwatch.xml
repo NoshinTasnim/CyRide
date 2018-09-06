@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#c61313"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -13,11 +14,13 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="80sp"
+        android:layout_marginTop="130dp"
         tools:layout_editor_absoluteX="40dp"
         tools:layout_editor_absoluteY="90dp" />
 
     <TextView
         android:id="@+id/cycleId"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -28,9 +31,14 @@
 
     <Button
         android:id="@+id/stopBtn"
+        android:background="#000"
+        android:textColor="#fdfdfd"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Stop"
+        android:layout_height="70dp"
+        android:text="Stop Ride"
         android:gravity="center"
         tools:layout_editor_absoluteX="93dp"
         tools:layout_editor_absoluteY="381dp" />

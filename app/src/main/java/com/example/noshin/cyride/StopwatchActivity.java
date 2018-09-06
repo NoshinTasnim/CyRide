@@ -10,6 +10,9 @@ import android.widget.Chronometer;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static android.widget.Toast.LENGTH_LONG;
+import static android.widget.Toast.makeText;
+
 public class StopwatchActivity extends AppCompatActivity {
 
     private Chronometer chronometer;
@@ -36,8 +39,11 @@ public class StopwatchActivity extends AppCompatActivity {
                stopChronometer();
 
                // String duration=toString(chronometer.getText());
+                makeText(getApplicationContext(),"Duration: "+chronometer.getText(), LENGTH_LONG).show();
+
                 Intent intent=new Intent(StopwatchActivity.this, RideSummary.class);
                // intent.putExtra("cycleId",cycleId);
+                intent.putExtra("duration",chronometer.getText());
                 startActivity(intent);
 
             }
