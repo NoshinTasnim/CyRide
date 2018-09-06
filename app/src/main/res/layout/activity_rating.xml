@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ff0000"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.noshin.cyride.Rating">
+
+    <Button
+        android:id="@+id/button"
+        android:background="#000"
+        android:textColor="#ffffff"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="427dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:gravity="center"
+        android:layout_width="324dp"
+        android:layout_height="43dp"
+        android:text="Thanks For The Ride"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="31dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="204dp"
+        android:layout_height="57dp"
+        android:gravity="center"
+        android:text="Rate The App"
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="106dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="241dp"
+        android:layout_height="79dp"
+        app:srcCompat="@drawable/star"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="218dp" />
+</android.support.constraint.ConstraintLayout>
