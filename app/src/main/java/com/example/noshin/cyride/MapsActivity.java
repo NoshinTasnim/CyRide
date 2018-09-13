@@ -13,21 +13,11 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.zxing.Result;
 
-
-import me.dm7.barcodescanner.zxing.ZXingScannerView;
-
-import static android.widget.Toast.*;
-
-
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback,ZXingScannerView.ResultHandler {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-
-    private ZXingScannerView zXingScannerView;
-
-    Button b1;
+    private Button gobtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,31 +28,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        b1= (Button) findViewById(R.id.btn);
+        gobtn = (Button) findViewById(R.id.go);
 
-        b1.setOnClickListener(new View.OnClickListener() {
+        gobtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                scan();
-
+                Toast.makeText(getApplicationContext(), "Start Going", Toast.LENGTH_LONG);
+                Intent intentsignup = new Intent(getApplicationContext(), barcodeactivity.class);
+                startActivity(intentsignup);
+                finish();
             }
         });
-    }
-
-    public void scan()
-    {
-
-        zXingScannerView= new ZXingScannerView(getApplicationContext());
-        setContentView(zXingScannerView);
-        zXingScannerView.setResultHandler(this);
-        zXingScannerView.startCamera();
-
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        zXingScannerView.stopCamera();
     }
 
 
@@ -83,21 +59,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-    }
-
-    @Override
-    public void handleResult(Result result) {
-
-        makeText(getApplicationContext(),"Cycle Id: "+result.getText(), LENGTH_LONG).show();
-        zXingScannerView.resumeCameraPreview(this);
-
-        String cycleId=result.getText();
-        Intent intent=new Intent(MapsActivity.this, StopwatchActivity.class);
-        intent.putExtra("cycleId",cycleId);
-        startActivity(intent);
-
-
-
 
     }
 }
